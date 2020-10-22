@@ -1,0 +1,26 @@
+# 4. Реализуйте рекурсивную функцию нарезания прямоугольника
+def my_func(a, b, n):
+    n += 1
+    # print("n = " + str(n))
+    if a <= 0 or b <= 0:
+        print("длины ребер получаемых квадратов :")
+        print(mas)
+        print("количество получаемых квадратов :")
+        print(n)
+        return
+    elif a < b:
+        b -= a
+        # print("b = " + str(b))
+        mas.append(a)
+        my_func(a, b, n)
+    else:
+        a -= b
+        # print("a = " + str(a))
+        mas.append(b)
+        my_func(a, b, n)
+# Ввод данных
+x = int(input("Введите длину прямоугольника:\n"))
+y = int(input("Введите ширину прямоугольника:\n"))
+mas = []                           # declare list
+k = 0
+my_func(x, y, k)
