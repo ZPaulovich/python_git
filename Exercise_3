@@ -1,0 +1,17 @@
+import random
+# Сформировать одномерный список целых чисел A, используя генератор случайных чисел (диапазон от 0 до 99).
+
+n = int(input("Введите размер списка:\n"))
+mas = []                           # declare list
+for i in range(n):
+    a = random.randint(1, 100)
+    mas.append(a)                   # create list
+print("Исходный список:")
+print(mas)
+# 3.2 Все четные по значению элементы исходного списка A поместить в новый список B.
+new_mas = []
+for i in range(1, len(mas) - 1):
+    if mas[i] % 2 == 0:             # find even number
+        new_mas.append(mas[i])           # create new list
+print("Список с четными числами:")
+print(new_mas)
