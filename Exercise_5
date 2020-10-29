@@ -73,24 +73,27 @@ st.AddStu("1018", "Name13", "LastName13", "05 07 2000", "Address13", "NumberPhon
 st.AddStu("2011", "Name14", "LastName14", "05 08 2000", "Address14", "NumberPhone14", "FPM", 4, 1)
 st.AddStu("1008", "Name15", "LastName15", "10 08 2000", "Address15", "NumberPhone15", "FPM", 4, 1)
 """
-def get_students_by_group_number(group):
-    print("List of the students by group: \n")
+def get_students_by_group_number(group, faculty):
+    print("List of the students by group and faculty: \n")
+    print("--------------------------------------------")
     for i in students:
-        if i.get_group() == group:
+        if i.get_group() == group and i.get_faculty() == faculty:
             print(i.__str__())
 
 def get_students_by_faculty(faculty):
     print("List of the students by faculty name:" + faculty)
+    print("--------------------------------------------")
     for i in students:
         if i.get_faculty() == faculty:
             print(i.__str__())
 
+print("--------------------------------------------")
 print("Список всех студентов: ")
 print("--------------------------------------------")
 for x in range(len(students)):
     print(students[x])
 print("Put the faculty name: ")
-print("--------------------------------------------")
-get_students_by_faculty(input())
-#print("Put the group number:\n")
-#get_students_by_group_number(int(input()))
+fc = (input())
+get_students_by_faculty(fc)
+print("Put the group number:\n")
+get_students_by_group_number(int(input()), fc)
