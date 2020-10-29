@@ -1,0 +1,96 @@
+from datetime import datetime, date
+
+class Student:
+    __studid = " "
+    __name = " "
+    __lastname = " "
+    __birthday = date.today()
+    __address = " "
+    __phone = " "
+    __faculty = " "
+    __course = 0
+    __group = 0
+
+    def __init__(self, studid="2000", name="Name0", lastname="LastName0", birthday="09 03 2000",
+                 address="address0", phone="phone0",faculty="FPM", course=1, group=2):
+        self.__studid = studid
+        self.__name = name
+        self.__lastname = lastname
+        self.__birthday = birthday
+        self.__address = address
+        self.__phone = phone
+        self.__faculty = faculty
+        self.__course = course
+        self.__group = group
+        students.append(self)
+        print("Введен объект для " + name)
+
+    def __str__(self):
+        today = date.today()
+        date_of_birth = datetime.strptime(self.__birthday, "%d %m %Y")
+        age = "Age: %s year(s)" % (today.year - date_of_birth.year -
+                                 ((today.month, today.day) < (date_of_birth.month, date_of_birth.day)))
+        return str(self.__studid) + " " + str(self.__name) + " " + str(self.__lastname) + ", " + age\
+               + ", " + str(self.__address) + " " + str(self.__phone) + ", " + str(self.__faculty) \
+               + ", " + str(self.__course) + ", " + str(self.__group)
+
+    def AddStu(self, studid, name, lastname, birthday, address, phone, faculty, course, group):
+        self.__studid = studid
+        self.__name = name
+        self.__lastname = lastname
+        self.__birthday = birthday
+        self.__address = address
+        self.__phone = phone
+        self.__faculty = faculty
+        self.__course = course
+        self.__group = group
+        students.append(self)
+        print("Введен объект для " + name)
+        print(self.__str__())
+
+    def get_age(self):
+        return self.__birthday
+    def get_faculty(self):
+        return self.__faculty
+    def get_group(self):
+        return self.__group
+
+students = []
+st = Student()
+st.AddStu("1021", "Name11", "LastName11", "05 10 2000", "Address11", "NumberPhone11", "FPM", 4, 2)
+""" st.AddStu("1001", "Name1", "LastName1", "05 01 2000", "Address1", "NumberPhone1", "FPM", 4, 1)
+st.AddStu("1002", "Name2", "LastName2", "05 02 2000", "Address2", "NumberPhone2", "FPM", 4, 1)
+st.AddStu("1004", "Name3", "LastName3", "05 03 2000", "Address3", "NumberPhone3", "FPM", 4, 1)
+st.AddStu("1010", "Name4", "LastName4", "01 05 2000", "Address4", "NumberPhone4", "FPM", 4, 2)
+st.AddStu("2001", "Name5", "LastName5", "10 02 2000", "Address5", "NumberPhone5", "MMF", 4, 1)
+st.AddStu("1005", "Name6", "LastName6", "10 03 2000", "Address6", "NumberPhone6", "FPM", 4, 1)
+st.AddStu("1015", "Name7", "LastName7", "15 06 2000", "Address7", "NumberPhone7", "FPM", 4, 2)
+st.AddStu("1020", "Name8", "LastName8", "11 04 2000", "Address8", "NumberPhone8", "FPM", 4, 2)
+st.AddStu("2003", "Name9", "LastName9", "20 05 2000", "Address9", "NumberPhone9", "MMF", 4, 1)
+st.AddStu("1009", "Name10", "LastName11", "21 01 2000", "Address10", "NumberPhone10", "FPM", 4, 1)
+st.AddStu("2004", "Name12", "LastName12", "05 06 2000", "Address12", "NumberPhone12", "MMF", 4, 1)
+st.AddStu("1018", "Name13", "LastName13", "05 07 2000", "Address13", "NumberPhone13", "FPM", 4, 2)
+st.AddStu("2011", "Name14", "LastName14", "05 08 2000", "Address14", "NumberPhone14", "FPM", 4, 1)
+st.AddStu("1008", "Name15", "LastName15", "10 08 2000", "Address15", "NumberPhone15", "FPM", 4, 1)
+"""
+def get_students_by_group_number(group):
+    print("List of the students by group: \n")
+    for i in students:
+        if i.get_group() == group:
+            print(i.__str__())
+
+def get_students_by_faculty(faculty):
+    print("List of the students by faculty name:" + faculty)
+    for i in students:
+        if i.get_faculty() == faculty:
+            print(i.__str__())
+
+print("Список всех студентов: ")
+print("--------------------------------------------")
+for x in range(len(students)):
+    print(students[x])
+print("Put the faculty name: ")
+print("--------------------------------------------")
+get_students_by_faculty(input())
+#print("Put the group number:\n")
+#get_students_by_group_number(int(input()))
