@@ -58,8 +58,8 @@ class Student:
 students = []
 st = Student()
 st.AddStu("1021", "Name11", "LastName11", "05 10 2000", "Address11", "NumberPhone11", "FPM", 4, 2)
-""" st.AddStu("1001", "Name1", "LastName1", "05 01 2000", "Address1", "NumberPhone1", "FPM", 4, 1)
-st.AddStu("1002", "Name2", "LastName2", "05 02 2000", "Address2", "NumberPhone2", "FPM", 4, 1)
+st.AddStu("1001", "Name1", "LastName1", "05 01 2000", "Address1", "NumberPhone1", "FPM", 4, 1)
+""" st.AddStu("1002", "Name2", "LastName2", "05 02 2000", "Address2", "NumberPhone2", "FPM", 4, 1)
 st.AddStu("1004", "Name3", "LastName3", "05 03 2000", "Address3", "NumberPhone3", "FPM", 4, 1)
 st.AddStu("1010", "Name4", "LastName4", "01 05 2000", "Address4", "NumberPhone4", "FPM", 4, 2)
 st.AddStu("2001", "Name5", "LastName5", "10 02 2000", "Address5", "NumberPhone5", "MMF", 4, 1)
