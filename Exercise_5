@@ -31,7 +31,7 @@ class Student:
                + ", " + self.__address + " " + self.__phone + ", " + self.__faculty \
                + ", " + str(self.__course) + ", " + str(self.__group)
 
-# Рачет возраста
+# Расчет возраста
     def get_age(self):
         today = date.today()
         date_of_birth = datetime.strptime(self.__birthday, "%d %m %Y")
