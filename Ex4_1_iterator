@@ -1,0 +1,28 @@
+# Создайте итерируемый объект, возвращающий генератор тридцати пяти чисел трибоначчи и выведите эти числа
+def gen_thb(m):                 # генератор
+    a = b = 0
+    c = 1
+    for i in range(m):
+        if b == 0 or a == 0:
+            yield c
+            a = b
+            b = c
+        else:
+            yield c
+            sum = a + b + c
+            a = b
+            b = c
+            c = sum
+#
+n = 35
+
+it = iter(gen_thb(n))             # Получаем итератор
+while True:
+    try:
+        print(next(it))               # Print вызывает метод  итератора __next__
+    except StopIteration:
+        break
+#
+print()
+print('Или печать в одну строку: \n')
+print(list(gen_thb(35)))
