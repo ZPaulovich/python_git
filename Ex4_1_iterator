@@ -25,4 +25,4 @@ while True:
 #
 print()
 print('Или печать в одну строку: \n')
-print(list(gen_thb(35)))
+print(list(gen_thb(n)))
